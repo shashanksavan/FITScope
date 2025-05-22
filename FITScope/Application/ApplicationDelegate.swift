@@ -27,7 +27,8 @@ import Cocoa
 @main
 public class ApplicationDelegate: NSObject, NSApplicationDelegate
 {
-    private var mainWindowControllers: [ MainWindowController ] = []
+    @MainActor private var aboutWindowController = AboutWindowController()
+    @MainActor private var mainWindowControllers = [ MainWindowController ]()
     
     public func applicationDidFinishLaunching( _ notification: Notification )
     {
@@ -61,6 +62,24 @@ public class ApplicationDelegate: NSObject, NSApplicationDelegate
         {
             self.open( urls: panel.urls )
         }
+    }
+    
+    @IBAction
+    public func showAboutWindow( _ sender: Any? )
+    {
+        guard let window = self.aboutWindowController.window else
+        {
+            NSSound.beep()
+            
+            return
+        }
+        
+        if window.isVisible == false
+        {
+            window.center()
+        }
+        
+        window.makeKeyAndOrderFront( sender )
     }
     
     @MainActor
