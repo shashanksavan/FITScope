@@ -27,6 +27,7 @@ import Cocoa
 @main
 public class ApplicationDelegate: NSObject, NSApplicationDelegate
 {
+    @MainActor private var updater               = GitHubUpdater( owner: "macmade", repository: "FITScope" )
     @MainActor private var aboutWindowController = AboutWindowController()
     @MainActor private var mainWindowControllers = [ MainWindowController ]()
     
@@ -62,6 +63,19 @@ public class ApplicationDelegate: NSObject, NSApplicationDelegate
         {
             self.open( urls: panel.urls )
         }
+    }
+    
+    @IBAction
+    public func checkForUpdates( _ sender: Any? )
+    {
+        guard let updater = self.updater else
+        {
+            NSSound.beep()
+            
+            return
+        }
+        
+        updater.checkForUpdates()
     }
     
     @IBAction
