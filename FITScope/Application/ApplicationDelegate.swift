@@ -65,6 +65,20 @@ public class ApplicationDelegate: NSObject, NSApplicationDelegate
     }
     
     @IBAction
+    public func showHelp( _ sender: Any? )
+    {
+        guard let url = URL( string: "https://github.com/macmade/FITScope" )
+        else
+        {
+            NSSound.beep()
+            
+            return
+        }
+        
+        NSWorkspace.shared.open( url )
+    }
+    
+    @IBAction
     public func showAboutWindow( _ sender: Any? )
     {
         guard let window = self.aboutWindowController.window else
