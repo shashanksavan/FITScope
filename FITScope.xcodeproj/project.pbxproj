@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		056E5C512DDF1356003254C7 /* SwiftFITS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056E5C452DDF104D003254C7 /* SwiftFITS.framework */; };
 		056E5C522DDF1356003254C7 /* SwiftFITS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 056E5C452DDF104D003254C7 /* SwiftFITS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		056E5C5B2DDF9696003254C7 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E5C5A2DDF9693003254C7 /* MainWindowController.swift */; };
+		056E5C5D2DDF971A003254C7 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 056E5C5C2DDF971A003254C7 /* MainWindowController.xib */; };
+		056E5C652DDFA8EE003254C7 /* UTType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E5C642DDFA8EB003254C7 /* UTType.swift */; };
 		0587FF0E2DDE64DF005DECEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0587FF092DDE64DF005DECEF /* Assets.xcassets */; };
 		0587FF0F2DDE64DF005DECEF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0587FF0C2DDE64DF005DECEF /* MainMenu.xib */; };
 		0587FF102DDE64DF005DECEF /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587FF082DDE64DF005DECEF /* ApplicationDelegate.swift */; };
@@ -112,6 +115,9 @@
 		056E5C3D2DDF1041003254C7 /* Release - Library.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Release - Library.xcconfig"; sourceTree = "<group>"; };
 		056E5C3F2DDF104D003254C7 /* SwiftFITS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftFITS.xcodeproj; path = Submodules/SwiftFITS/SwiftFITS.xcodeproj; sourceTree = "<group>"; };
 		056E5C4E2DDF130E003254C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		056E5C5A2DDF9693003254C7 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		056E5C5C2DDF971A003254C7 /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		056E5C642DDFA8EB003254C7 /* UTType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTType.swift; sourceTree = "<group>"; };
 		0587FF082DDE64DF005DECEF /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
 		0587FF092DDE64DF005DECEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0587FF0A2DDE64DF005DECEF /* FITScope.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FITScope.entitlements; sourceTree = "<group>"; };
@@ -351,10 +357,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		056E5C592DDF9689003254C7 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				056E5C5A2DDF9693003254C7 /* MainWindowController.swift */,
+				056E5C5C2DDF971A003254C7 /* MainWindowController.xib */,
+			);
+			path = MainWindow;
+			sourceTree = "<group>";
+		};
+		056E5C632DDFA8E2003254C7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				056E5C642DDFA8EB003254C7 /* UTType.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		0587FF0D2DDE64DF005DECEF /* FITScope */ = {
 			isa = PBXGroup;
 			children = (
 				056E5C4A2DDF11D0003254C7 /* Application */,
+				056E5C592DDF9689003254C7 /* MainWindow */,
+				056E5C632DDFA8E2003254C7 /* Utility */,
 				056E5C492DDF1180003254C7 /* Supporting Files */,
 			);
 			path = FITScope;
@@ -506,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0587FF0E2DDE64DF005DECEF /* Assets.xcassets in Resources */,
+				056E5C5D2DDF971A003254C7 /* MainWindowController.xib in Resources */,
 				0587FF0F2DDE64DF005DECEF /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +557,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056E5C652DDFA8EE003254C7 /* UTType.swift in Sources */,
+				056E5C5B2DDF9696003254C7 /* MainWindowController.swift in Sources */,
 				0587FF102DDE64DF005DECEF /* ApplicationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

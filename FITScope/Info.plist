@@ -28,5 +28,50 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.image</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>gov.nasa.gsfc.fits</string>
+			<key>UTTypeDescription</key>
+			<string>FITS Image</string>
+			<key>UTTypeIconFile</key>
+			<string>FITSFileIcon</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>fits</string>
+					<string>fit</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>FITS Image</string>
+			<key>CFBundleTypeIconFile</key>
+			<string>FITSFileIcon</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>gov.nasa.gsfc.fits</string>
+			</array>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>fits</string>
+				<string>fit</string>
+			</array>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+		</dict>
+	</array>
 </dict>
 </plist>

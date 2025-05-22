@@ -25,17 +25,59 @@
 import Cocoa
 
 @main
-class ApplicationDelegate: NSObject, NSApplicationDelegate
+public class ApplicationDelegate: NSObject, NSApplicationDelegate
 {
-    func applicationDidFinishLaunching( _ notification: Notification )
+    private var mainWindowControllers: [ MainWindowController ] = []
+    
+    public func applicationDidFinishLaunching( _ notification: Notification )
+    {
+        self.openDocument( nil )
+    }
+
+    public func applicationWillTerminate( _ notification: Notification )
     {}
 
-    func applicationWillTerminate( _ notification: Notification )
-    {}
-
-    func applicationSupportsSecureRestorableState( _ app: NSApplication ) -> Bool
+    public func applicationSupportsSecureRestorableState( _ app: NSApplication ) -> Bool
     {
         false
     }
+    
+    public func application( _ application: NSApplication, open urls: [ URL ] )
+    {
+        self.open( urls: urls )
+    }
+    
+    @IBAction
+    public func openDocument( _ sender: Any? )
+    {
+        let panel                     = NSOpenPanel()
+        panel.canChooseFiles          = true
+        panel.canChooseDirectories    = false
+        panel.allowsMultipleSelection = true
+        panel.canCreateDirectories    = true
+        panel.allowedContentTypes     = [ .fits ]
+        
+        if panel.runModal() == .OK
+        {
+            self.open( urls: panel.urls )
+        }
+    }
+    
+    @MainActor
+    private func open( urls: [ URL ] )
+    {
+        urls.forEach
+        {
+            let controller = MainWindowController( url: $0 )
+            {
+                [ weak self ] controller in self?.mainWindowControllers.removeAll
+                {
+                    $0 === controller
+                }
+            }
+            
+            self.mainWindowControllers.append( controller )
+            controller.window?.makeKeyAndOrderFront( nil )
+        }
+    }
 }
-
