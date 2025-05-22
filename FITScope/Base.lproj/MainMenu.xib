@@ -126,6 +126,12 @@
                                     <action selector="print:" target="-1" id="qaZ-4w-aoO"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="jYf-kC-edK"/>
+                            <menuItem title="Show Info..." keyEquivalent="i" id="qbt-MT-3cK">
+                                <connections>
+                                    <action selector="showInfo:" target="-1" id="wUT-4J-K3t"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

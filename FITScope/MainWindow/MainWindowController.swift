@@ -23,11 +23,16 @@
  ******************************************************************************/
 
 import Cocoa
+import SwiftFITS
 
 public class MainWindowController: NSWindowController, NSWindowDelegate
 {
-    private var url:     URL
-    private var onClose: ( ( MainWindowController ) -> Void )?
+    private var url:                  URL
+    private var onClose:              ( ( MainWindowController ) -> Void )?
+    private var file:                 FITSFile?
+    private var infoWindowController: InfoWindowController?
+    
+    @objc private dynamic var loading = false
     
     public init( url: URL, onClose: ( ( MainWindowController ) -> Void )? )
     {
@@ -53,11 +58,62 @@ public class MainWindowController: NSWindowController, NSWindowDelegate
         
         self.window?.delegate = self
         self.window?.title    = self.url.lastPathComponent
+        self.loading          = true
+        let url               = self.url
+        
+        DispatchQueue.global( qos: .userInitiated ).async
+        {
+            do
+            {
+                let file = try FITSFile( url: url )
+                
+                DispatchQueue.main.async
+                {
+                    self.loading = false
+                    self.file    = file
+                }
+            }
+            catch
+            {
+                DispatchQueue.main.async
+                {
+                    self.loading = false
+                    let alert    = NSAlert( error: error )
+                    
+                    if let window = self.window
+                    {
+                        alert.beginSheetModal( for: window )
+                    }
+                    else
+                    {
+                        alert.runModal()
+                    }
+                }
+            }
+        }
     }
     
     public func windowWillClose( _ notification: Notification )
     {
         self.onClose?( self )
     }
+    
+    @IBAction
+    public func showInfo( _ sender: Any? )
+    {
+        guard let file = self.file
+        else
+        {
+            NSSound.beep()
+            
+            return
+        }
+        
+        if self.infoWindowController == nil
+        {
+            self.infoWindowController = InfoWindowController( name: self.url.lastPathComponent, file: file )
+        }
+        
+        self.infoWindowController?.window?.makeKeyAndOrderFront( sender )
+    }
 }
-
